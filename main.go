@@ -73,6 +73,8 @@ func main() {
 			// Defaults to 50% of MaxBytes
 			natsJS.PullThresholdBytes(1024 * 512),
 		},
+		// AckAsync enables asynchronous acknowledgement
+		AckAsync: true,
 	})
 	if err != nil {
 		panic(err)
@@ -89,6 +91,7 @@ func main() {
 			natsJS.PullExpiry(1 * time.Second),
 			natsJS.PullThresholdBytes(1024 * 512),
 		},
+		AckAsync: true,
 	})
 	if err != nil {
 		panic(err)
